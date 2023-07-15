@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include("./partials/head") %>
+<title>SignIn</title>
+</head>
+<body>
+
+  <% if(locals.error) {%>
+    <div class="container mt-4">
+        <div class="alert alert-danger" role="alert">
+          <%=locals.error %>
+          </div>
+        </div>
+    <% } %>
+
+<div class="container mt-4">
+    <form action="/user/signin" method="post">
+        
+        
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+        </div>
+       
+        <button type="submit" class="btn btn-primary mt-4" >Sign In</button>
+        <h6 class="mt-3">Don't have an account yet ? <a href="/user/signup" role="button" class="anchor-btn" style="text-decoration: none;">Sign Up</a></h6>
+
+        <h6 class="mt-3" style="margin-left:6rem">Or</h6>
+        <div class="row">
+          <div class="col-md-3">
+            <a class="btn btn-outline-primary" href="/auth/google" role="button" >
+              <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+             Sign In with Google
+            </a>
+          </div>
+        </div>
+        
+      </form>
+</div>
+<%- include("./partials/script") %>
+
+</body>
+</html>

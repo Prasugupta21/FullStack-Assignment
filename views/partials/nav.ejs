@@ -1,0 +1,45 @@
+<nav class="navbar">
+    <div class="navbar-left">
+      <form class="search-form">
+        <button type="button" style="background-color:#3b3b4f ;" >
+            <input type="text" class="search" placeholder="Search 9,000+ tutorials">
+                    </button>
+      </form>
+    </div>
+    <div class="navbar-center">
+      <a class="navbar-brand" href="#">freeCodeCamp <i class="fa-brands fa-free-code-camp fa-lg"></i>
+      </a>
+    </div>
+    <div class="navbar-right">
+      <button class="menu-button">Menu</button>
+      <% if (locals.user) { %>
+       
+            
+        <div class="dropdown">
+            <img class=" dropdown-toggle user-logo" src="images/user.jpg"  data-bs-toggle="dropdown" aria-expanded="false">
+           
+           
+            <ul class="dropdown-menu">
+                  <li><a class="dropdown-item"  href="/user/logout" >Logout</a></li>
+            </ul>
+          </div>
+   
+        <% } else if (locals.auth){ %>
+          <div class="dropdown">
+            <img class=" dropdown-toggle user-logo" src="images/user.jpg"  data-bs-toggle="dropdown" aria-expanded="false">
+           
+           
+            <ul class="dropdown-menu">
+                  <li><a class="dropdown-item"  href="/user/logout" >Logout</a></li>
+            </ul>
+          </div>
+         <%  } else {%>
+
+            <a class="sign-in-button" role="button" href="/user/signin" style="text-decoration: none;">Sign In</a>
+
+            <% }%>
+
+    </div>
+  </nav>
+
+    

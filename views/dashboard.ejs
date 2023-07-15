@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head") %>
+
+    <title>Dashboard</title>
+</head>
+<body>
+
+    
+    <%- include("./partials/nav") %>
+    <div class="list-group custom-list-group">
+        <div class="mb-3">
+      <h5 class="mt-4 mb-5 dashboard-heading">Welcome to freeCodeCamp.org</h5>
+      <p class="dashboard-para ">" I have not failed.  I've just found 10,000 ways that won't work. " 
+        <p ><i>-Thomas A. Edison</i></p>
+
+      </p>
+    </div>
+
+<% courses.forEach(course => { %>
+    <div style="display: flex; justify-content: space-between; align-items: center; gap: 15px;  padding-inline: 4vw;
+    padding-block: 1vw; max-width: 743.04px; ">
+      <a href="#" class="list-group-item list-group-item-action custom-list-group-item"    
+      ><img src="<%=course.thumbnail %>" class="map-icon" height="50px" width="50px" class="mr-2">  <%= course.title %>  <%=course.duration %>  <a>
+    </div>
+
+        <% }) %>
+</div>
+    <%- include("./partials/script") %>
+ 
+</body>
+</html>
